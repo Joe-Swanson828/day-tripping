@@ -1,5 +1,4 @@
-�G"""
-ui/app.py — Main application window for Day Tripping.
+"""
 
 Manages the customtkinter home screen, theme switching, and
 transitions to/from the pywebview map view.
@@ -43,15 +42,15 @@ logger = logging.getLogger(__name__)
 
 # Font path
 FONT_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "fonts")
-DISPLAY_FONT = "Boogaloo"
-DISPLAY_FONT_PATH = "Boogaloo-Regular.ttf"
-FALLBACK_FONT = "Righteous"
-# For headers/titles: Boogaloo
-# For body text: SF Pro Text / system
+DISPLAY_FONT = "Fredericka the Great"
+DISPLAY_FONT_PATH = "FrederickatheGreat-Regular.ttf"
+FALLBACK_FONT = "Space Mono"
+# For headers/titles: Fredericka the Great
+# For body text: Space Mono / system
 
 
 class DayTrippingApp(ctk.CTk):
-    """Main application window — home screen with theme management."""
+    """Main application window â€” home screen with theme management."""
 
     def __init__(self) -> None:
         super().__init__()
@@ -99,10 +98,10 @@ class DayTrippingApp(ctk.CTk):
 
     def _load_display_font(self) -> None:
         """Load the psychedelic display font if available."""
-        # Load Boogaloo as primary, Righteous as fallback
+        # Load Fredericka the Great as primary, Space Mono as fallback
         fonts_to_load = [
-            ("Boogaloo-Regular.ttf", "Boogaloo"),
-            ("Righteous-Regular.ttf", "Righteous"),
+            ("FrederickatheGreat-Regular.ttf", "Fredericka the Great"),
+            ("SpaceMono-Regular.ttf", "Space Mono"),
         ]
         
         for font_file, font_name in fonts_to_load:
@@ -125,7 +124,7 @@ class DayTrippingApp(ctk.CTk):
                         elif error:
                             logger.warning("Font registration error for %s: %s", font_name, error)
                 except ImportError:
-                    logger.info("PyObjC CoreText not available — using system fonts")
+                    logger.info("PyObjC CoreText not available â€” using system fonts")
                 except Exception as e:
                     logger.warning("Could not load custom font %s: %s", font_name, e)
 
@@ -196,7 +195,7 @@ class DayTrippingApp(ctk.CTk):
             values=["Psychedelic", "Dark", "Light"],
             variable=self.theme_var,
             command=self._on_theme_change,
-            font=("SF Pro Text", 12),
+            font=(FALLBACK_FONT, 12),
             selected_color=self.theme.ctk_selected,
             selected_hover_color=self.theme.ctk_selected_hover,
             unselected_color=self.theme.bg_secondary,
@@ -226,7 +225,7 @@ class DayTrippingApp(ctk.CTk):
         self._build_content()
 
     def _open_trip(self, trip_id: int) -> None:
-        """Request opening a trip — exits CTk mainloop so main() can launch webview."""
+        """Request opening a trip â€” exits CTk mainloop so main() can launch webview."""
         self._pending_map_trip = trip_id
         self.withdraw()
         self.quit()  # Exit mainloop; main() loop will handle the webview
@@ -239,7 +238,7 @@ class DayTrippingApp(ctk.CTk):
 
 
 def main() -> None:
-    """Launch Day Tripping with CTk ↔ webview main-thread switching."""
+    """Launch Day Tripping with CTk â†” webview main-thread switching."""
     app = DayTrippingApp()
 
     while True:
@@ -247,7 +246,7 @@ def main() -> None:
 
         trip_id = app._pending_map_trip
         if trip_id is None:
-            # User closed the window normally — exit
+            # User closed the window normally â€” exit
             break
 
         # Reset pending state
@@ -260,7 +259,7 @@ def main() -> None:
         except Exception as e:
             logger.error("Failed to open map view: %s", e)
 
-        # Map view closed — re-show home
+        # Map view closed â€” re-show home
         app.show_and_refresh()
 
     app.destroy()
@@ -268,4 +267,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-�G*cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a462-file:///Applications/Day%20Tripping/ui/app.py:#file:///Applications/Day%20Tripping

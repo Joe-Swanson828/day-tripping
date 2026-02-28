@@ -1,5 +1,5 @@
-�("""
-config/themes.py — Color theme definitions for Day Tripping.
+¬("""
+config/themes.py â€” Color theme definitions for Day Tripping.
 
 Three themes: Psychedelic (default), Dark, and Light.
 Each theme provides colors for both customtkinter (home screen)
@@ -69,36 +69,36 @@ class Theme:
 
 PSYCHEDELIC = Theme(
     name="psychedelic",
-    bg_primary="#1A0A2E",      # Deep Indigo
-    bg_secondary="#2d1b4e",
-    bg_tertiary="#3d2a5c",
-    action_primary="#C44B00",  # Deep Burnt Orange
-    action_hover="#E05600",
-    interactive="#5B0EA6",     # Royal Purple
-    interactive_hover="#7211CF",
-    discovery="#F5C400",       # Golden Yellow (swapped for discovery/accent)
-    discovery_hover="#D4A900",
-    warning="#f472b6",
-    warning_hover="#ec4899",
-    accent="#F5C400",          # Golden Yellow
-    accent_hover="#D4A900",
-    text_primary="#FFF8E7",    # Cream
-    text_secondary="#c4b5a0",
-    text_tertiary="#8b7d6b",
-    text_on_accent="#1A0A2E",
-    border="#4a3668",
-    divider="#3d2a5c",
-    route_start_color="#C44B00", # Deep Burnt Orange
-    route_end_color="#5B0EA6",   # Royal Purple
-    route_alt_color="#4a3668",
-    marker_color="#C44B00",
-    discover_marker="#F5C400",
-    ctk_fg="#2d1b4e",
-    ctk_button="#5B0EA6",
-    ctk_button_hover="#7211CF",
-    ctk_entry_bg="#3d2a5c",
-    ctk_selected="#5B0EA6",
-    ctk_selected_hover="#7211CF",
+    bg_primary="#080010",      # Abyssal Purple (Void)
+    bg_secondary="#140524",    # Deep Space
+    bg_tertiary="#22093B",     # Bruise Purple
+    action_primary="#FF2A00",  # Blood Red (Sun)
+    action_hover="#EAEF00",    # Acid Yellow
+    interactive="#FF8100",     # Peyote Orange
+    interactive_hover="#FF2A00",
+    discovery="#EAEF00",       # Acid Yellow
+    discovery_hover="#FF8100",
+    warning="#FFD500",
+    warning_hover="#FF003C",
+    accent="#EAEF00",          # Acid Yellow
+    accent_hover="#FF8100",
+    text_primary="#F1EADD",    # Bleached Bone
+    text_secondary="#A88E96",  # Mauve
+    text_tertiary="#5E4057",   # Muted
+    text_on_accent="#080010",  # Void text on bright buttons
+    border="#FF2A00",          # Blood Red Borders
+    divider="#22093B",
+    route_start_color="#EAEF00", 
+    route_end_color="#FF2A00",   
+    route_alt_color="#5E4057",
+    marker_color="#FF2A00",
+    discover_marker="#EAEF00",
+    ctk_fg="#140524",
+    ctk_button="#FF2A00",
+    ctk_button_hover="#EAEF00",
+    ctk_entry_bg="#22093B",
+    ctk_selected="#FF8100",
+    ctk_selected_hover="#FF2A00",
 )
 
 DARK = Theme(
@@ -179,4 +179,4 @@ THEMES: dict[str, Theme] = {
 def get_theme(name: str) -> Theme:
     """Return a Theme by name. Defaults to psychedelic if name is invalid."""
     return THEMES.get(name.lower(), PSYCHEDELIC)
-�(*cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a4624file:///Applications/Day%20Tripping/config/themes.py:#file:///Applications/Day%20Tripping
+¬(*cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a4624file:///Applications/Day%20Tripping/config/themes.py:#file:///Applications/Day%20Tripping

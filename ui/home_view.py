@@ -1,8 +1,7 @@
-’H"""
-ui/home_view.py ‚Äî "My Planned Trips" home screen.
+"""
 
 Displays a grid of trip cards with create, rename, duplicate, and delete
-functionality. Each card shows trip name, start‚Üíend, date, and a colored
+functionality. Each card shows trip name, start√¢‚Ä†‚Äôend, date, and a colored
 accent bar. Clicking a card opens the trip in the map view.
 """
 
@@ -25,7 +24,7 @@ from core.trip_manager import (
 
 logger = logging.getLogger(__name__)
 
-DISPLAY_FONT = "Boogaloo"
+DISPLAY_FONT = "Fredericka the Great"
 
 
 class HomeView(ctk.CTkFrame):
@@ -52,18 +51,18 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkLabel(
             header,
             text="Your Adventures",
-            font=("SF Pro Display", 18),
+            font=("Space Mono", 18),
             text_color=self.theme.text_secondary,
         ).pack(side="left")
 
         new_btn = ctk.CTkButton(
             header,
-            text="Ôºã New Adventure",
+            text="√Ø¬º‚Äπ New Adventure",
             font=(DISPLAY_FONT, 18),
             fg_color=self.theme.interactive,
             hover_color=self.theme.interactive_hover,
             text_color=self.theme.text_on_accent if self.theme.name == "light" else "#ffffff",
-            corner_radius=25,  # More organic/rounded
+            corner_radius=0,  # Brutalist sharp edges
             height=44,
             width=200,
             command=self._create_new_trip,
@@ -109,7 +108,7 @@ class HomeView(ctk.CTkFrame):
         empty_frame = ctk.CTkFrame(
             self.grid_frame,
             fg_color=self.theme.bg_secondary,
-            corner_radius=30,  # Wavy/Organic feel
+            corner_radius=0,  # Brutalist sharp edges
         )
         empty_frame.grid(row=0, column=0, columnspan=3, padx=20, pady=60, sticky="nsew")
 
@@ -122,8 +121,8 @@ class HomeView(ctk.CTkFrame):
 
         ctk.CTkLabel(
             empty_frame,
-            text="Click \"Ôºã New Adventure\" to plan your first road trip!",
-            font=("SF Pro Text", 14),
+            text="Click \"√Ø¬º‚Äπ New Adventure\" to plan your first road trip!",
+            font=("Space Mono", 14),
             text_color=self.theme.text_secondary,
         ).pack(pady=(0, 40))
 
@@ -132,8 +131,8 @@ class HomeView(ctk.CTkFrame):
         card = ctk.CTkFrame(
             self.grid_frame,
             fg_color=self.theme.bg_secondary,
-            corner_radius=24,  # More organic
-            border_width=1,
+            corner_radius=0,  # Brutalist sharp edges
+            border_width=2,
             border_color=self.theme.border,
             cursor="hand2",
         )
@@ -159,12 +158,12 @@ class HomeView(ctk.CTkFrame):
         # Route summary
         start = trip.get("start_location") or "Not set"
         end = trip.get("end_location") or "Not set"
-        route_text = f"{start}  ‚Üí  {end}" if start != "Not set" or end != "Not set" else "Tap to start planning"
+        route_text = f"{start}  √¢‚Ä†‚Äô  {end}" if start != "Not set" or end != "Not set" else "Tap to start planning"
 
         ctk.CTkLabel(
             card,
             text=route_text,
-            font=("SF Pro Text", 12),
+            font=("Space Mono", 12),
             text_color=self.theme.text_secondary,
             anchor="w",
             wraplength=250,
@@ -184,7 +183,7 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkLabel(
             card,
             text=date_str,
-            font=("SF Pro Text", 11),
+            font=("Space Mono", 11),
             text_color=self.theme.text_tertiary,
             anchor="w",
         ).pack(fill="x", padx=16, pady=(0, 8))
@@ -198,10 +197,11 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkButton(
             btn_frame,
             text="Open",
-            font=("SF Pro Text", 11),
+            font=("Space Mono", 11, "bold"),
             fg_color=self.theme.interactive,
             hover_color=self.theme.interactive_hover,
-            corner_radius=8,
+            text_color="#080010",
+            corner_radius=0,
             height=28,
             width=60,
             command=lambda tid=trip_id: self.on_open_trip(tid),
@@ -210,11 +210,11 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkButton(
             btn_frame,
             text="Rename",
-            font=("SF Pro Text", 11),
+            font=("Space Mono", 11),
             fg_color=self.theme.bg_tertiary,
             hover_color=self.theme.border,
             text_color=self.theme.text_secondary,
-            corner_radius=8,
+            corner_radius=0,
             height=28,
             width=60,
             command=lambda tid=trip_id: self._rename_trip(tid),
@@ -223,11 +223,11 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkButton(
             btn_frame,
             text="Duplicate",
-            font=("SF Pro Text", 11),
+            font=("Space Mono", 11),
             fg_color=self.theme.bg_tertiary,
             hover_color=self.theme.border,
             text_color=self.theme.text_secondary,
-            corner_radius=8,
+            corner_radius=0,
             height=28,
             width=68,
             command=lambda tid=trip_id: self._duplicate_trip(tid),
@@ -236,10 +236,11 @@ class HomeView(ctk.CTkFrame):
         ctk.CTkButton(
             btn_frame,
             text="Delete",
-            font=("SF Pro Text", 11),
+            font=("Space Mono", 11, "bold"),
             fg_color=self.theme.warning,
             hover_color=self.theme.warning_hover,
-            corner_radius=8,
+            text_color="#080010",
+            corner_radius=0,
             height=28,
             width=56,
             command=lambda tid=trip_id: self._delete_trip(tid),
@@ -277,7 +278,7 @@ class HomeView(ctk.CTkFrame):
         """Duplicate a trip."""
         new_id = duplicate_trip(trip_id)
         if new_id:
-            logger.info("Duplicated trip %d ‚Üí %d", trip_id, new_id)
+            logger.info("Duplicated trip %d √¢‚Ä†‚Äô %d", trip_id, new_id)
             self.refresh()
 
     def _delete_trip(self, trip_id: int) -> None:
@@ -295,4 +296,3 @@ class HomeView(ctk.CTkFrame):
     def refresh(self) -> None:
         """Refresh the trip list."""
         self._populate_trips()
-⁄ *cascade08⁄€*cascade08€ª *cascade08ªº*cascade08ºΩ *cascade08Ω’*cascade08’Í *cascade08ÍÎ*cascade08Îˇ *cascade08ˇÅ*cascade08ÅÅ *cascade08ÅÉ*cascade08ÉÑ *cascade08Ñô*cascade08ô§  *cascade08§ • *cascade08• ¶  *cascade08¶ ∂ *cascade08∂ ’H *cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a4623file:///Applications/Day%20Tripping/ui/home_view.py:#file:///Applications/Day%20Tripping
