@@ -1,0 +1,14 @@
+äcustomtkinter>=5.2.0
+pywebview>=5.0
+folium>=0.17.0
+Pillow>=10.0
+requests>=2.31.0
+httpx>=0.27.0
+python-dotenv>=1.0.0
+bcrypt>=4.0.0
+pyobjc-framework-CoreText>=12.0
+pyobjc-framework-Cocoa>=12.0
+py2app>=0.28
+ruff>=0.4.0
+black>=24.0
+ä *cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a4624file:///Applications/Day%20Tripping/requirements.txt:#file:///Applications/Day%20Tripping

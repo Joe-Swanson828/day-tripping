@@ -1,0 +1,80 @@
+€<svg width="180" height="180" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded Square Background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="160" fill="#1A0A2E" />
+
+  <!-- Fractal/Mandala Geometry behind sun -->
+  <g opacity="0.4" stroke="#FFF8E7" stroke-width="2" fill="none">
+    <circle cx="512" cy="300" r="100" />
+    <circle cx="512" cy="300" r="180" stroke-dasharray="10 20" />
+    <circle cx="512" cy="300" r="260" />
+    <path d="M512 0 V600 M212 300 H812 M297 85 L727 515 M297 515 L727 85" stroke-opacity="0.3" />
+    <!-- Flower of life pattern snippet -->
+    <path d="M512 200 A100 100 0 1 1 512 400 A100 100 0 1 1 512 200" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Sun Gradient -->
+  <defs>
+    <radialGradient id="sunGradientScale180" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F5C400;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#C44B00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B0EA6;stop-opacity:1" />
+    </radialGradient>
+    
+    <linearGradient id="roadGradientScale180" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C44B00;stop-opacity:0.8" />
+      <stop offset="25%" style="stop-color:#F5C400;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#14b8a6;stop-opacity:0.8" />
+      <stop offset="75%" style="stop-color:#5B0EA6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.8" />
+    </linearGradient>
+
+    <filter id="glowScale180">
+      <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Wavy Sun Rays -->
+  <g stroke="#F5C400" stroke-width="8" stroke-linecap="round" fill="none" filter="url(#glowScale180)">
+    <path d="M512 180 Q530 140 512 100" />
+    <path d="M512 420 Q494 460 512 500" />
+    <path d="M632 300 Q672 318 712 300" />
+    <path d="M392 300 Q352 282 312 300" />
+    <!-- Diagonal rays -->
+    <path d="M597 215 Q630 180 660 210" />
+    <path d="M427 385 Q394 420 364 390" />
+    <path d="M597 385 Q630 420 660 390" />
+    <path d="M427 215 Q394 180 364 210" />
+  </g>
+
+  <!-- The Sun -->
+  <circle cx="512" cy="300" r="100" fill="url(#sunGradientScale180)" filter="url(#glowScale180)" />
+
+  <!-- Road -->
+  <path d="M512 400 L50 1024 H974 L512 400 Z" fill="#2d1b4e" />
+  <!-- Center line -->
+  <path d="M512 400 V1024" stroke="#F5C400" stroke-width="12" stroke-dasharray="80 40" />
+  <!-- Shimmer edges -->
+  <path d="M512 400 L50 1024" stroke="url(#roadGradientScale180)" stroke-width="4" opacity="0.6" />
+  <path d="M512 400 L974 1024" stroke="url(#roadGradientScale180)" stroke-width="4" opacity="0.6" />
+
+  <!-- Hippie Van -->
+  <g transform="translate(480, 800) scale(1.5)">
+    <path d="M-60 0 H60 V-40 Q60 -70 30 -70 H-30 Q-60 -70 -60 -40 Z" fill="#C44B00" />
+    <path d="M-60 -20 H60" stroke="#FFF8E7" stroke-width="2" />
+    <rect x="-50" y="-60" width="30" height="20" rx="4" fill="#1A0A2E" />
+    <rect x="-10" y="-60" width="30" height="20" rx="4" fill="#1A0A2E" />
+    <path d="M30 -60 H50 Q55 -60 55 -50 V-40 H30 Z" fill="#1A0A2E" />
+    <circle cx="-40" cy="0" r="12" fill="#1A0A2E" stroke="#FFF8E7" stroke-width="3" />
+    <circle cx="40" cy="0" r="12" fill="#1A0A2E" stroke="#FFF8E7" stroke-width="3" />
+    <circle cx="0" cy="-20" r="10" fill="none" stroke="#F5C400" stroke-width="1" />
+    <path d="M0 -30 V-10 M-7 -27 L0 -20 L7 -27" stroke="#F5C400" stroke-width="1" fill="none" transform="rotate(180, 0, -20)" />
+    <circle cx="-45" cy="-20" r="4" fill="#F5C400" />
+    <circle cx="45" cy="-20" r="4" fill="#5B0EA6" />
+    <path d="M-30 -10 Q-15 0 0 -10 Q15 -20 30 -10" stroke="#FFF8E7" stroke-width="1" fill="none" />
+  </g>
+</svg>
+€*cascade08"(06f4dc7650e0851582b69b2902ce5424d01b3a4627file:///Applications/Day%20Tripping/assets/icon_180.svg:#file:///Applications/Day%20Tripping
